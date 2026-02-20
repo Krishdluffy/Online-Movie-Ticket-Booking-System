@@ -4,7 +4,7 @@ import random
 import time
 from datetime import datetime
 
-# ======================== UI THEME ========================
+#UI THEME 
 DARK_BG = "#0a0612"
 PANEL_BG = "#1a1426"
 ACCENT = "#ff0055"
@@ -686,3 +686,4 @@ if __name__ == "__main__":
     app = MovieBookingApp(root)
 
     root.mainloop()
+
