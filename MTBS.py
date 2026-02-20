@@ -20,7 +20,7 @@ BOOKED_COLOR = "#555555"
 
 USD_TO_INR = 83
 
-# ======================== CORE LOGIC ========================
+#CORE LOGIC 
 class MovieTicketBookingSystem:
     def __init__(self):
         self.movies = {
@@ -686,4 +686,5 @@ if __name__ == "__main__":
     app = MovieBookingApp(root)
 
     root.mainloop()
+
 
