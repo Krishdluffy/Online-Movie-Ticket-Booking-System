@@ -55,7 +55,7 @@ class MovieTicketBookingSystem:
         
         self.theaters = {
             1: {
-             ++   "seats": {},  # Will store seat data per movie/showtime
+                "seats": {},  # Will store seat data per movie/showtime
                 "seat_types": self.generate_seat_types(),
                 "total_seats": 48
             }
@@ -86,7 +86,7 @@ class MovieTicketBookingSystem:
     def toggle_seat(self, theater_id, movie_id, showtime, row, col):
         key = f"{movie_id}_{showtime}"
         
-        # Initialize if this is the first interaction for this movie/showtime
+      
         if key not in self.theaters[theater_id]["seats"]:
             self.theaters[theater_id]["seats"][key] = {
                 "matrix": [[0 for _ in range(8)] for _ in range(6)],
@@ -139,7 +139,7 @@ class MovieTicketBookingSystem:
             self.theaters[theater_id]["seats"][key]["booked_seats"].add((row, col))
             self.theaters[theater_id]["seats"][key]["matrix"][row][col] = 0
 
-# ======================== UI ========================
+#UI 
 class MovieBookingApp:
     def __init__(self, root):
         self.root = root
@@ -684,4 +684,5 @@ class MovieBookingApp:
 if __name__ == "__main__":
     root = tk.Tk()
     app = MovieBookingApp(root)
+
     root.mainloop()
