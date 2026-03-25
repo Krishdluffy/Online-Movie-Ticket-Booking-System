@@ -4,7 +4,7 @@ import random
 import time
 from datetime import datetime
 
-#UI THEME 
+# ======================== UI THEME ========================
 DARK_BG = "#0a0612"
 PANEL_BG = "#1a1426"
 ACCENT = "#ff0055"
@@ -20,7 +20,7 @@ BOOKED_COLOR = "#555555"
 
 USD_TO_INR = 83
 
-#CORE LOGIC 
+# ======================== CORE LOGIC ========================
 class MovieTicketBookingSystem:
     def __init__(self):
         self.movies = {
@@ -86,7 +86,7 @@ class MovieTicketBookingSystem:
     def toggle_seat(self, theater_id, movie_id, showtime, row, col):
         key = f"{movie_id}_{showtime}"
         
-      
+        # Initialize if this is the first interaction for this movie/showtime
         if key not in self.theaters[theater_id]["seats"]:
             self.theaters[theater_id]["seats"][key] = {
                 "matrix": [[0 for _ in range(8)] for _ in range(6)],
@@ -139,7 +139,7 @@ class MovieTicketBookingSystem:
             self.theaters[theater_id]["seats"][key]["booked_seats"].add((row, col))
             self.theaters[theater_id]["seats"][key]["matrix"][row][col] = 0
 
-#UI 
+# ======================== UI ========================
 class MovieBookingApp:
     def __init__(self, root):
         self.root = root
@@ -684,7 +684,4 @@ class MovieBookingApp:
 if __name__ == "__main__":
     root = tk.Tk()
     app = MovieBookingApp(root)
-
     root.mainloop()
-
-
